@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dine Mine Steps
+
+### Setup
+1. For the Google Sign in button, install ngrok from: https://ngrok.com/
+2. After downloading the ngrok exe. Go to the folder and run this in terminal: ngrok http 3000 -host-header="localhost:3000"
+3. This will start a reverse proxy. Add the URL that is displayed into the Google Registration for the App under Authorized URIs
+
+### Run
+1. Run npm install from the project root to install all dependencies
+2. Run npm start to start running the project (this will open localhost:3000 in the browser)
+3. In the Browser navigate to the link shown the ngrok to be able to see the Google Sign in button (SignIn button requires internet accessible url to work which is why this is needed)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
