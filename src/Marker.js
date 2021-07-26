@@ -7,6 +7,7 @@ const Marker = (props) => {
       <div className="marker"
         style={{ backgroundColor: color, cursor: 'pointer'}}
         title={name}
+        id={id}
       />
     );
   };

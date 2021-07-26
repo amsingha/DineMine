@@ -6,9 +6,9 @@ import Marker from './Marker';
 const GOOGLE_MAP_API_KEY = 'AIzaSyCzeqra04D0wYBWiutQu3_XIwdCWWDwS8Q';
 
 
-const SimpleMap = (props) => {
-    const [center, setCenter] = useState({lat: 11.0168, lng: 76.9558 });
-    const [zoom, setZoom] = useState(11);
+const SimpleMap = () => {
+    const [center, setCenter] = useState({lat: 47.606209, lng: -122.332069 });
+    const [zoom, setZoom] = useState(10);
 
     const getMapOptions = () => {
         return {
@@ -30,9 +30,15 @@ const SimpleMap = (props) => {
           options={getMapOptions} // shows Satellite view options
         >
           <Marker
-            lat={11.0168}
-            lng={76.9558}
+            lat={47.530102}
+            lng={-122.032616}
             name="My Marker"
+            color="blue"
+          />
+          <Marker
+            lat={47.606209}
+            lng={-122.332069}
+            name="My Marker 2"
             color="blue"
           />
         </GoogleMapReact>

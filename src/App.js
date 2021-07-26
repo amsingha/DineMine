@@ -72,7 +72,7 @@ function App() {
     //ensure everything is set before loading the script
     loadGoogleScript();
     
-  }, []);
+  });
   
   
   return (
@@ -86,7 +86,7 @@ function App() {
         {isLoggedIn &&
           <div>
             <div>
-              <img src={imageUrl} />
+              <img src={imageUrl} alt="google sign-in"/>
             </div>
             <div>{name}</div>
             <div>{email}</div>
