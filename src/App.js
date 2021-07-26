@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import { loadGoogleScript } from './GoogleLogin';
+import SimpleMap from './SimpleMap';
 const googleClientId = "153608278319-169t8o4mqbd6lpjhkuqh2lv2n8f2md5r.apps.googleusercontent.com" //process.env.REACT_APP_GOOGLE_CLIENT_ID;
+
+// See: https://console.cloud.google.com/apis/credentials?project=aidacapstone1
 
 function App() {
   
@@ -91,6 +94,9 @@ function App() {
           </div>
         }
       </header>
+      <SimpleMap />
+       
+
     </div>
   );
 }
