@@ -4,6 +4,18 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { loadGoogleScript } from './GoogleLogin';
 import SimpleMap from './SimpleMap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect
+} from "react-router-dom";
+
+//Pages
+import HomePage from "./pages"; ///< index.jsx will be automatically imported 
+import MapLocationsPage from './pages/maplocations';
+
 const googleClientId = "153608278319-169t8o4mqbd6lpjhkuqh2lv2n8f2md5r.apps.googleusercontent.com" //process.env.REACT_APP_GOOGLE_CLIENT_ID;
 
 // See: https://console.cloud.google.com/apis/credentials?project=aidacapstone1
@@ -78,13 +90,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         {!isLoggedIn &&
           <div id="google-signin"></div>
         }
         
         {isLoggedIn &&
-          <div>
+          <div className="signed-in-userinfo">
             <div>
               <img src={imageUrl} alt="google sign-in"/>
             </div>
@@ -94,9 +105,16 @@ function App() {
           </div>
         }
       </header>
-      <SimpleMap />
-       
-
+      <div>
+       <Router>
+        {/*All our Routes goes here!*/}
+          {/*<Route path="/" component={} />*/}
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/maplocations" component={MapLocationsPage} />
+       </Router> 
+       {/* <SimpleMap /> */}
+       <img src={logo} className="App-logo" alt="logo" />
+      </div>
     </div>
   );
 }
